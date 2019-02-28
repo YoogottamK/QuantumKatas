@@ -47,8 +47,7 @@ namespace Quantum.Kata.BasicGates {
             // The Pauli X gate will change the |0⟩ state to the |1⟩ state and vice versa.
             // Type X(q);
             // Then rebuild the project and rerun the tests - T11_StateFlip_Test should now pass!
-            
-            // ...
+            X(q);
         }
         
         adjoint self;
@@ -66,7 +65,7 @@ namespace Quantum.Kata.BasicGates {
     operation BasisChange (q : Qubit) : Unit {
         
         body (...) {
-            // ...
+            H(q);
         }
         
         adjoint self;
@@ -79,7 +78,7 @@ namespace Quantum.Kata.BasicGates {
     operation SignFlip (q : Qubit) : Unit {
         
         body (...) {
-            // ...
+            Z(q);
         }
         
         adjoint self;
@@ -97,7 +96,7 @@ namespace Quantum.Kata.BasicGates {
     operation AmplitudeChange (q : Qubit, alpha : Double) : Unit {
         
         body (...) {
-            // ...
+            R(PauliY, 2.0 * alpha, q);
         }
         
         adjoint invert;
@@ -110,7 +109,7 @@ namespace Quantum.Kata.BasicGates {
     operation PhaseFlip (q : Qubit) : Unit {
         
         body (...) {
-            // ...
+            S(q);
         }
         
         adjoint invert;
@@ -128,7 +127,7 @@ namespace Quantum.Kata.BasicGates {
     operation PhaseChange (q : Qubit, alpha : Double) : Unit {
         
         body (...) {
-            // ...
+            //
         }
         
         adjoint invert;
@@ -141,7 +140,7 @@ namespace Quantum.Kata.BasicGates {
     operation BellStateChange1 (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            Z(qs[0]);
         }
         
         adjoint invert;
@@ -154,7 +153,7 @@ namespace Quantum.Kata.BasicGates {
     operation BellStateChange2 (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            X(qs[1]);
         }
         
         adjoint invert;
@@ -167,7 +166,8 @@ namespace Quantum.Kata.BasicGates {
     operation BellStateChange3 (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            X(qs[1]);
+            Z(qs[1]);
         }
         
         adjoint invert;
@@ -189,7 +189,7 @@ namespace Quantum.Kata.BasicGates {
     operation TwoQubitGate1 (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            CNOT(qs[0], qs[1]);
         }
         
         adjoint self;
@@ -205,7 +205,7 @@ namespace Quantum.Kata.BasicGates {
     operation TwoQubitGate2 (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            
         }
         
         adjoint self;
@@ -239,7 +239,7 @@ namespace Quantum.Kata.BasicGates {
     operation ToffoliGate (qs : Qubit[]) : Unit {
         
         body (...) {
-            // ...
+            CCNOT(qs[0], qs[1], qs[2]);
         }
         
         adjoint self;
